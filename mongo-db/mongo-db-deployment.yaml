@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongodb-deployment
-  namespace: pangolin
+#  namespace: pangolin
   labels:
     app: mongodb
 spec:
@@ -35,4 +35,16 @@ spec:
               secretKeyRef:
                 name: mongo-secret
                 key: mongo-root-password
- 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-service
+#  namespace: pangolin
+spec:
+  selector:
+    app: mongodb
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017

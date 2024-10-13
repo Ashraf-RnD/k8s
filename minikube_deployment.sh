@@ -7,4 +7,5 @@ kubectl apply -f mongo-db-deployment.yaml
 
 cd ../mongo-express
 kubectl apply -f mongo-express-configMap.yaml
+kubectl apply -f mongo-express-service.yaml
 kubectl apply -f mongo-express-deployment.yaml
