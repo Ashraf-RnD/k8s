@@ -18,10 +18,14 @@ Few go to commands with kubectl
     kubectl get nodes
     kubectl get pods -A
     kubectl get services
+    
     kubectl delete deployment <deployment-name>
     kubectl describe pod <pod-name>
+    
     kubectl logs <pod-name>
     kubectl exec -it <namespace> <pod-name> -- /bin/bash
+    
+    kubectl describe service <service-name>
 ```
 
 ```
@@ -64,5 +68,36 @@ To delete a deployment using configuration file
 - ```kybectl delete -f <configuration-file-name>.yaml```
 
 Install ```Lense``` to see what is just happened.
+
+## YAML Configuration File
+
+### Configuration file [3 parts]
+    - metadata
+        - Labels
+    - specification
+        - Selectors
+    - status
+
+### Layers of Abstraction
+    Deployment 
+    |--> ReplicaSet 
+        |--> Pod 
+            |--> Container
+
+### Components 
+    - Labels
+    - Selectors
+    - Ports
+        - containerPort
+        - port
+        - targetPort
+
+
+
+
+
+
+
+
 
 # TaDa
