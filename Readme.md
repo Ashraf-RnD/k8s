@@ -1,14 +1,14 @@
-# k8s-mongo-express-mongo-db
+# k8s
 
 ## Pre-requisite Docker installed.
 
-Inistall minikube in Mac using homebrew
+Install Minikube in Mac using homebrew
 - ```brew install minikube```
 
-Configure minkube with docker as driver using command : 
+Configure Minikube with docker as driver using command : 
 - ```minikube config set driver docker```
 
-to start minikube
+to start Minikube
 - ```minikube start```
 
 While installing minikube ```kubelet``` already been installed.
@@ -16,8 +16,12 @@ While installing minikube ```kubelet``` already been installed.
 Few go to commands with kubectl
 ```
     kubectl get nodes
-    kubectl get pod
+    kubectl get pods -A
     kubectl get services
+    kubectl delete deployment <deployment-name>
+    kubectl describe pod <pod-name>
+    kubectl logs <pod-name>
+    kubectl exec -it <namespace> <pod-name> -- /bin/bash
 ```
 
 ```
@@ -53,11 +57,11 @@ To get a particular deployment description in a result file
 
 To create deployment from a configuration file
 
-- ```kybectl apply -f *-configuration.yaml```
+- ```kybectl apply -f <configuration-file-name>.yaml```
 
 To delete a deployment using configuration file
 
-- ```kybectl delete -f *-configuration.yaml```
+- ```kybectl delete -f <configuration-file-name>.yaml```
 
 Install ```Lense``` to see what is just happened.
 
